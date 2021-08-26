@@ -11,15 +11,15 @@ import Home from './pages/Home';
 
 function App() {
     return (
-        <div className="App">
+        <div className='App'>
             <BrowserRouter>
                 <Navbar />
                 <Switch>
-                    <Route path="/" component={User} exact />
+                    <Route path='/' component={User} exact />
 
-                    <Route path="/login" component={Login} />
-                    <Route path="/signup" component={Signup} />
-                    <Route path="/home" component={Home} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/signup' component={Signup} />
+                    <Route path='/home' component={Home} />
                 </Switch>
             </BrowserRouter>
         </div>
