@@ -18,7 +18,6 @@ const DATABASE = process.env.DATABASE;
 app.use(express.json());
 app.use(cors());
 
-//const url = ` mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.ogl8o.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
 const url = ` mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.ogl8o.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
 
 mongoose.connect(
