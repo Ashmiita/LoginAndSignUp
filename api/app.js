@@ -6,11 +6,21 @@ const SignUp = require('./routes/signup');
 const Login = require('./routes/login');
 
 const cors = require('cors');
+
+const path = require('path');
+const projectPath = path.dirname(process.cwd());
+require('dotenv').config({ path: path.join(projectPath, '.env') });
+
+const USER_NAME = process.env.USER_NAME;
+const PASSWORD = process.env.PASSWORD;
+const DATABASE = process.env.DATABASE;
+
 app.use(express.json());
 app.use(cors());
 
-const url =
-    'mongodb+srv://Ashmita:ashmita@1234@cluster0.ogl8o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+console.log('....', USER_NAME, PASSWORD, DATABASE);
+
+const url = ` mongodb+srv://${USER_NAME}:${PASSWORD}@cluster0.ogl8o.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
 
 mongoose.connect(
     url,
