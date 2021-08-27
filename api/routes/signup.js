@@ -8,6 +8,9 @@ const create = require('../CRUD/Create');
 const read = require('../CRUD/Read');
 const update = require('../CRUD/Update');
 const Delete = require('../CRUD/Delete');
+const verifyToken = require('../tokenVerificattion');
+
+//const verifyToken = require('..tokenVerificattion');
 
 //#region Create Operation
 router.post('/create', async (req, res) => {
@@ -44,8 +47,9 @@ router.post('/create', async (req, res) => {
 //#endregion
 
 //#region Read Operation
-router.get('/read', async (req, res) => {
+router.get('/read', verifyToken, async (req, res) => {
     console.log('inside read signup');
+
     try {
         const readData = await read(SignUpSchema);
 

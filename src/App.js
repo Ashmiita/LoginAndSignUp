@@ -10,16 +10,24 @@ import Login from './pages/login';
 import Home from './pages/Home';
 
 function App() {
+    const getToken = localStorage.getItem('token');
+    console.log('token', getToken);
     return (
         <div className='App'>
             <BrowserRouter>
                 <Navbar />
                 <Switch>
-                    <Route path='/' component={User} exact />
+                    {getToken ? (
+                        <>
+                            <Route path='/' component={User} exact />
+                            <Route path='/signup' component={Signup} />
+                            <Route path='/home' component={Home} />
+                        </>
+                    ) : (
+                        <Login />
+                    )}
 
-                    <Route path='/login' component={Login} />
-                    <Route path='/signup' component={Signup} />
-                    <Route path='/home' component={Home} />
+                    {/* <Route path='/login' component={Login} /> */}
                 </Switch>
             </BrowserRouter>
         </div>

@@ -8,6 +8,7 @@ const create = require('../CRUD/Create');
 const read = require('../CRUD/Read');
 const update = require('../CRUD/Update');
 const Delete = require('../CRUD/Delete');
+const jwt = require('jsonwebtoken');
 
 //#region Create Operation
 
@@ -26,9 +27,13 @@ router.post('/create', async (req, response) => {
             bcrypt.compare(password, getAllSignupUsers.password, (err, res) => {
                 console.log(res, '....');
                 if (res) {
+                    const generateToken = jwt.sign(
+                        { userName: getAllSignupUsers.userName },
+                        'seceret'
+                    );
                     response.json({
                         msg: ' Successfully login',
-                        token: 'gfghfhghjguytyyftdfgxds',
+                        token: generateToken,
                     });
                 } else {
                     response.json({ msg: 'password donot match' });
