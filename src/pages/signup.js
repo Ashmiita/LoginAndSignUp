@@ -61,17 +61,14 @@ function Signup() {
         }
     };
     return (
-        <div className="container" style={{ width: '40%' }}>
-            <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ height: 550 }}
-            >
+        <div className='container mt-5' style={{ width: '50%' }}>
+            <div className='d-flex justify-content-center align-items-center'>
                 <div
-                    className="card card-body"
+                    className='card card-body'
                     style={{ border: '0.8px solid', borderRadius: 10 }}
                 >
                     <div
-                        className="font-weight-bold large my-3"
+                        className='font-weight-bold large my-3'
                         style={{ fontSize: 20 }}
                     >
                         Create an Account
@@ -84,61 +81,61 @@ function Signup() {
                             >
                                 <div>{msg}</div>
                                 <button
-                                    type="button"
-                                    className="close"
+                                    type='button'
+                                    className='close'
                                     onClick={() => {
                                         setMsg('');
                                     }}
                                 >
-                                    <span area-hidden="true">&times;</span>
+                                    <span area-hidden='true'>&times;</span>
                                 </button>
                             </div>
                         )}
                         <SignUpView
-                            label="Full Name:"
-                            type="text"
-                            name="fullName"
+                            label='Full Name:'
+                            type='text'
+                            name='fullName'
                             value={signupData.fullName}
                             onChange={onChangeText}
-                            placeholder="Enter Full Name"
+                            placeholder='Enter Full Name'
                         />
                         <SignUpView
-                            label="User Name:"
-                            type="text"
-                            name="userName"
+                            label='User Name:'
+                            type='text'
+                            name='userName'
                             value={signupData.userName}
                             onChange={onChangeText}
-                            placeholder="Enter User Name"
+                            placeholder='Enter User Name'
                             errMsg={errMsg}
                         />
 
                         <SignUpView
-                            label="Address:"
-                            type="text"
-                            name="address"
+                            label='Address:'
+                            type='text'
+                            name='address'
                             value={signupData.address}
                             onChange={onChangeText}
-                            placeholder="Enter Address"
+                            placeholder='Enter Address'
                         />
                         <SignUpView
-                            label="Phone Number:"
-                            type="text"
-                            name="phoneNumber"
+                            label='Phone Number:'
+                            type='text'
+                            name='phoneNumber'
                             value={signupData.phoneNumber}
                             onChange={onChangeText}
-                            placeholder="Enter Phone Number"
+                            placeholder='Enter Phone Number'
                         />
                         <SignUpView
-                            label="Password:"
-                            type="password"
-                            name="password"
+                            label='Password:'
+                            type='password'
+                            name='password'
                             value={signupData.password}
                             onChange={onChangeText}
-                            placeholder="Enter password"
+                            placeholder='Enter password'
                         />
                         <div>
                             <button
-                                className="btn  mt-3"
+                                className='btn  mt-3'
                                 style={{
                                     backgroundColor: '#3f50b5',
                                     color: 'white',
@@ -167,15 +164,15 @@ export function SignUpView({
     errMsg = '',
 }) {
     return (
-        <div className="row m-2 my-3">
-            <div className="col-lg-4  d-flex justify-content-start align-items-center">
-                <div className="font-weight-bold">{label}</div>
+        <div className='row m-2 my-3'>
+            <div className='col-lg-4  d-flex justify-content-start align-items-center'>
+                <div className='font-weight-bold'>{label}</div>
             </div>
-            <div className="col-lg">
+            <div className='col-lg'>
                 <input
                     type={type}
                     name={name}
-                    className="form-control text-black"
+                    className='form-control text-black'
                     value={value}
                     onChange={onChange}
                     placeholder={placeholder}
@@ -185,7 +182,7 @@ export function SignUpView({
                     }}
                 />
                 {errMsg && (
-                    <div className="text-danger text-left">{errMsg}</div>
+                    <div className='text-danger text-left'>{errMsg}</div>
                 )}
             </div>
         </div>

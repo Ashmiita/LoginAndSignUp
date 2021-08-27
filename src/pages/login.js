@@ -41,13 +41,10 @@ export default function Login() {
         }
     };
     return (
-        <div className="container" style={{ width: '35%' }}>
-            <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ height: 400 }}
-            >
+        <div className='container mt-5' style={{ width: '35%' }}>
+            <div className='d-flex justify-content-center align-items-center'>
                 <div
-                    className="card card-body"
+                    className='card card-body'
                     style={{ border: '0.8px solid', borderRadius: 10 }}
                 >
                     <h3>Login</h3>
@@ -58,36 +55,36 @@ export default function Login() {
                             >
                                 <div>{msg}</div>
                                 <button
-                                    type="button"
-                                    className="close"
+                                    type='button'
+                                    className='close'
                                     onClick={() => {
                                         setMsg('');
                                     }}
                                 >
-                                    <span area-hidden="true">&times;</span>
+                                    <span area-hidden='true'>&times;</span>
                                 </button>
                             </div>
                         )}
                         <SignUpView
-                            label="User Name:"
-                            type="text"
-                            name="userName"
+                            label='User Name:'
+                            type='text'
+                            name='userName'
                             //value={loginData.userName}
                             onChange={onChangeText}
-                            placeholder="Enter UserName"
+                            placeholder='Enter UserName'
                         />
                         <SignUpView
-                            label="Password:"
-                            type="password"
-                            name="password"
+                            label='Password:'
+                            type='password'
+                            name='password'
                             // value={loginData.password}
                             onChange={onChangeText}
-                            placeholder="Enter Password"
+                            placeholder='Enter Password'
                         />
 
                         <div>
                             <button
-                                className="btn  mt-3"
+                                className='btn  mt-3'
                                 style={{
                                     backgroundColor: '#3f50b5',
                                     color: 'white',

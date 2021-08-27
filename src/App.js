@@ -27,7 +27,7 @@ function App() {
                         <Login />
                     )}
 
-                    {/* <Route path='/login' component={Login} /> */}
+                    <Route path='/login' component={Login} />
                 </Switch>
             </BrowserRouter>
         </div>
