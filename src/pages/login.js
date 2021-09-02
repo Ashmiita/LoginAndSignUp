@@ -39,6 +39,7 @@ export default function Login() {
 
             setAlertColor('success');
         }
+        window.location.href = '/';
     };
     return (
         <div className='container mt-5' style={{ width: '35%' }}>
@@ -69,7 +70,7 @@ export default function Login() {
                             label='User Name:'
                             type='text'
                             name='userName'
-                            //value={loginData.userName}
+                            value={loginData.userName}
                             onChange={onChangeText}
                             placeholder='Enter UserName'
                         />
@@ -77,7 +78,7 @@ export default function Login() {
                             label='Password:'
                             type='password'
                             name='password'
-                            // value={loginData.password}
+                            value={loginData.password}
                             onChange={onChangeText}
                             placeholder='Enter Password'
                         />

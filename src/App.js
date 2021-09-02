@@ -8,26 +8,33 @@ import User from './pages/user';
 import Signup from './pages/signup';
 import Login from './pages/login';
 import Home from './pages/Home';
+import { useEffect, useState } from 'react';
 
 function App() {
-    const getToken = localStorage.getItem('token');
-    console.log('token', getToken);
+    const [token, setToken] = useState();
+    useEffect(() => {
+        const getToken = localStorage.getItem('token');
+        setToken(getToken);
+        console.log('token', getToken);
+    }, [token]);
+
     return (
         <div className='App'>
             <BrowserRouter>
                 <Navbar />
                 <Switch>
-                    {getToken ? (
+                    {token ? (
                         <>
                             <Route path='/' component={User} exact />
-                            <Route path='/signup' component={Signup} />
+
                             <Route path='/home' component={Home} />
                         </>
                     ) : (
-                        <Login />
+                        <>
+                            <Route path='/login' component={Login} />
+                            <Route path='/signup' component={Signup} />
+                        </>
                     )}
-
-                    <Route path='/login' component={Login} />
                 </Switch>
             </BrowserRouter>
         </div>
